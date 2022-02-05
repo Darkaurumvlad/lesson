@@ -1,17 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Product;
+namespace App\Http\Controllers\Admin\Client;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Product\UpdateRequest;
-use App\Models\Product;
-use Illuminate\Http\Request;
+use App\Models\Client;
 
 class DeleteController extends Controller
 {
-    public function __invoke(Product $product)
+    public function __invoke(Client $client)
     {
-        $product->delete();
-        return redirect()->route('admin.product.index');
+        $client->delete();
+        return redirect()->route('admin.client.index');
     }
 }

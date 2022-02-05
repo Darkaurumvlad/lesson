@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Client;
+namespace App\Http\Requests\Admin\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -25,10 +25,23 @@ class UpdateRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|string|email',
-            'phone' => 'required|string',
-            'adds' => 'required|string',
-            'image' => 'required|string',
+            'email' => 'required|string|email|unique:users,email,' . $this->user_id,
+            'user_id' => 'required|integer|exists:users,id',
+            'role' => 'required|integer',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Это поле необходимо для заполнения',
+            'name.string' => 'Это поле ндолжно быть строкой',
+            'email.required' => 'Это поле необходимо для заполнения',
+            'email.string' => 'Это поле ндолжно быть строкой',
+            'email.email' => 'Ваша почта должна соответствовать формату mail@some.domain',
+            'email.unique' => 'Пользователь с таким email уже существует',
+            'role.required' => 'Это поле необходимо для заполнения',
+            'role.string' => 'Это поле ндолжно быть строкой',
         ];
     }
 }

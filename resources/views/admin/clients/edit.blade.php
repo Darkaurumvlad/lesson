@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Обновление товара</h1>
+                        <h1 class="m-0">Редактирование данных клиента</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -27,45 +27,45 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        @if(session('success'))
-                            <div class="alert alert-danger alert-dismissible fade show col-2" role="alert">
-                                {{ session('success') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        @endif
-                        <form action="{{ route('admin.product.update', $product->id) }}" method="POST" class="col-6">
+                        <form action="{{ route('admin.client.update', $client->id) }}" method="POST" class="col-6">
                             @csrf
                             @method('PATCH')
                             <div class="form-group">
                                 <label>название товара</label>
-                                <input type="text" class="form-control" name="name" placeholder="введите название"
-                                       value="{{ $product->name }}">
+                                <input type="text" class="form-control" name="name" placeholder="введите имя"
+                                       value="{{ $client->name }}">
                                 @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="description">описание товара</label>
-                                <textarea name="description" class="form-control" id="description"
-                                          placeholder="описание товара">{{ $product->description }}</textarea>
-                                @error('description')
+                                <label>цена товара</label>
+                                <input type="text" class="form-control" name="email" placeholder="новый почтовый ящик"
+                                       value="{{ $client->email }}">
+                                @error('email')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label>цена товара</label>
-                                <input type="text" class="form-control" name="price" placeholder="укажите цену"
-                                       value="{{ $product->price }}">
-                                @error('price')
+                                <input type="text" class="form-control" name="phone" placeholder="укажите новый №-телефона"
+                                       value="{{ $client->phone }}">
+                                @error('phone')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>цена товара</label>
+                                <input type="text" class="form-control" name="adds" placeholder="укажите новый адресс"
+                                       value="{{ $client->adds }}">
+                                @error('adds')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label>изображение</label>
-                                <input type="text" class="form-control" name="image" placeholder=" добавьте изображение"
-                                       value="{{ $product->image }}">
+                                <input type="text" class="form-control" name="image" placeholder="новое фото"
+                                       value="{{ $client->image }}">
                                 @error('image')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror

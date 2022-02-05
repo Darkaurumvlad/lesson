@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Client;
+namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
-use App\Models\Client;
+use App\Models\User;
 
 class DeleteController extends Controller
 {
-    public function __invoke(Client $client)
+    public function __invoke(User $user)
     {
-        $client->delete();
-        return redirect()->route('admin.client.index');
+        $user->delete();
+        return redirect()->route('admin.user.index');
     }
 }

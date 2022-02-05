@@ -27,24 +27,36 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{ route('admin.fertilizer.store') }}" method="POST" class="col-6">
+                        <form action="{{ route('admin.product.store') }}" method="POST" class="col-6">
                             @csrf
                             <div class="form-group">
                                 <label>название товара</label>
                                 <input type="text" class="form-control" name="name" placeholder="введите название">
+                                @error('name')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="description">описание товара</label>
                                 <textarea name="description" class="form-control" id="description"
-                                          placeholder="описание товара">{{ old('description') }}</textarea>
+                                          placeholder="описание товара"></textarea>
+                                @error('description')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>цена товара</label>
                                 <input type="text" class="form-control" name="price" placeholder="укажите цену">
+                                @error('price')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>изображение</label>
                                 <input type="text" class="form-control" name="image" placeholder=" добавьте изображение">
+                                @error('image')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <input type="submit" class="btn btn-primary" value="Добавить">
                         </form>

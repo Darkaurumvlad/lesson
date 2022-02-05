@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Список клиентов</h1>
+                        <h1 class="m-0">Список пользователей</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -27,7 +27,7 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-1 mb-3">
-                        <a href="{{ route('admin.client.create') }}" class="btn btn-block btn-primary">Добавить</a>
+                        <a href="{{ route('admin.user.create') }}" class="btn btn-block btn-primary">Добавить</a>
                     </div>
                 </div>
                 <div class="row">
@@ -40,26 +40,22 @@
                                     <tr>
                                         <th>имя</th>
                                         <th>почта</th>
-                                        <th>телефон</th>
-                                        <th>адресс</th>
-                                        <th>изображение</th>
+                                        <th>доступ</th>
                                         <th colspan="3" class="text-center">действие</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($clients as $client)
+                                    @foreach($users as $user)
                                         <tr>
-                                            <td>{{ $client->name }}</td>
-                                            <td>{{ $client->email }}</td>
-                                            <td>{{ $client->phone }}</td>
-                                            <td>{{ $client->adds }}</td>
-                                            <td>{{ $client->image }}</td>
-                                            <td class="text-center"><a href="{{ route('admin.client.show', $client->id) }}"><i
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>{{ $user->role }}</td>
+                                            <td class="text-center"><a href="{{ route('admin.user.show', $user->id) }}"><i
                                                         class="nav-icon fas fa-eye"></i></a></td>
-                                            <td class="text-center"><a href="{{ route('admin.client.edit', $client->id) }}"
+                                            <td class="text-center"><a href="{{ route('admin.user.edit', $user->id) }}"
                                                    class="text-success"><i class="nav-icon fas fa-pen"></i></a></td>
                                             <td class="text-center">
-                                                <form action="{{ route('admin.client.delete', $client->id) }}"
+                                                <form action="{{ route('admin.user.delete', $user->id) }}"
                                                       method="POST">
                                                     @csrf
                                                     @method('DELETE')

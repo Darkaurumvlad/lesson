@@ -6,11 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class ShowController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Product $product)
     {
-        $products = Product::all();
-        return view('admin.products.index', compact('products'));
+
+        return view('admin.products.show', compact('product'));
     }
 }

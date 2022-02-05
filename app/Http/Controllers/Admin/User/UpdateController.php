@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Client;
+namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Client\UpdateRequest;
-use App\Models\Client;
+use App\Http\Requests\Admin\User\UpdateRequest;
+use App\Models\User;
 
 class UpdateController extends Controller
 {
-    public function __invoke(UpdateRequest $request, Client $client)
+    public function __invoke(UpdateRequest $request, User $user)
     {
         $data = $request->validated();
 
-        $client->update($data);
-        return view('admin.clients.show', compact('client'));
+        $user->update($data);
+        return view('admin.users.show', compact('user'));
     }
 }

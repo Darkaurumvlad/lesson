@@ -8,9 +8,9 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-center">
-                        <h1 class="m-0 mr-2">{{ $client->name }}</h1>
-                        <a href="{{ route('admin.client.edit', $client->id) }}" class="text-success"><i class="nav-icon fas fa-pen"></i></a>
-                        <form action="{{ route('admin.client.delete', $client->id) }}"
+                        <h1 class="m-0 mr-2">{{ $user->name }}</h1>
+                        <a href="{{ route('admin.user.edit', $user->id) }}" class="text-success"><i class="nav-icon fas fa-pen"></i></a>
+                        <form action="{{ route('admin.user.delete', $user->id) }}"
                               method="POST">
                             @csrf
                             @method('DELETE')
@@ -43,25 +43,16 @@
                                 <table class="table table-hover text-nowrap">
                                     <tr>
                                         <td>Имя</td>
-                                        <td>{{ $client->name }}</td>
+                                        <td>{{ $user->name }}</td>
                                     </tr>
                                     <tr>
                                         <td>Почта</td>
-                                        <td>{{ $client->email }}</td>
+                                        <td>{{ $user->email }}</td>
                                     </tr>
                                     <tr>
-                                        <td>№-телефона</td>
-                                        <td>{{ $client->phone }}</td>
+                                        <td>доступ</td>
+                                        <td>{{ $user->role }}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Адресс</td>
-                                        <td>{{ $client->adds }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Фото</td>
-                                        <td>{{ $client->image }}</td>
-                                    </tr>
-
                                     </tbody>
                                 </table>
                             </div>

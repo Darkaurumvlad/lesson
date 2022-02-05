@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Добавление товара</h1>
+                        <h1 class="m-0">Обновление товара</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -27,12 +27,21 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{ route('admin.product.store') }}" method="POST" class="col-6">
+                        @if(session('success'))
+                            <div class="alert alert-danger alert-dismissible fade show col-2" role="alert">
+                                {{ session('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
+                        <form action="{{ route('admin.product.update', $product->id) }}" method="POST" class="col-6">
                             @csrf
+                            @method('PATCH')
                             <div class="form-group">
                                 <label>название товара</label>
                                 <input type="text" class="form-control" name="name" placeholder="введите название"
-                                       value="{{ old('name') }}">
+                                       value="{{ $product->name }}">
                                 @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -40,7 +49,7 @@
                             <div class="form-group">
                                 <label for="description">описание товара</label>
                                 <textarea name="description" class="form-control" id="description"
-                                          placeholder="описание товара">{{ old('description') }}</textarea>
+                                          placeholder="описание товара">{{ $product->description }}</textarea>
                                 @error('description')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -48,7 +57,7 @@
                             <div class="form-group">
                                 <label>цена товара</label>
                                 <input type="text" class="form-control" name="price" placeholder="укажите цену"
-                                       value="{{ old('price') }}">
+                                       value="{{ $product->price }}">
                                 @error('price')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -56,12 +65,12 @@
                             <div class="form-group">
                                 <label>изображение</label>
                                 <input type="text" class="form-control" name="image" placeholder=" добавьте изображение"
-                                       value="{{ old('image') }}">
+                                       value="{{ $product->image }}">
                                 @error('image')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <input type="submit" class="btn btn-primary" value="Добавить">
+                            <input type="submit" class="btn btn-primary" value="Обновить">
                         </form>
                     </div>
                 </div>

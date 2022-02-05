@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Product;
+namespace App\Http\Controllers\Admin\Client;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class CreateController extends Controller
 {
     public function __invoke()
     {
-        return view('admin.products.create');
+        return view('admin.clients.create');
     }
 }

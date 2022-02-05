@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Product;
+namespace App\Http\Controllers\Admin\Client;
 
 use App\Http\Controllers\Controller;
-use App\Models\Product;
-use Illuminate\Http\Request;
+use App\Models\Client;
 
 class EditController extends Controller
 {
-    public function __invoke(Product $product)
+    public function __invoke(Client $client)
     {
-        return view('admin.products.edit', compact('product'));
+        return view('admin.clients.edit', compact('client'));
     }
 }

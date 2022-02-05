@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Добавление клиента</h1>
+                        <h1 class="m-0">Добавление пользователя</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -27,51 +27,44 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{ route('admin.client.store') }}" method="POST" class="col-6">
+                        <form action="{{ route('admin.user.store') }}" method="POST" class="col-6">
                             @csrf
                             <div class="form-group">
-                                <label>имя клиента</label>
+                                <label>имя пользователя</label>
                                 <input type="text" class="form-control" name="name" placeholder="введите имя">
                                 @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>почта клиента</label>
+                                <label>почта пользователя</label>
                                 <input type="text" class="form-control" name="email" placeholder="укажите почту">
                                 @error('email')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label>номер телефонаа</label>
-                                <input type="text" class="form-control" name="phone" placeholder="укажите №-телефона">
-                                @error('phone')
+                            <div class="form-group w-50">
+                                <label>Выберите пользователя</label>
+                                <select name="role" class="form-control">
+                                    @foreach($roles as $id => $role)
+                                        <option value="{{ $id }}"
+                                            {{ $id == old('role') ? 'selected' : '' }}
+                                        >{{ $role}}</option>
+                                    @endforeach
+                                </select>
+                                @error('role')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label>адресс</label>
-                                <input type="text" class="form-control" name="adds" placeholder="укажите адресс">
-                                @error('adds')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label>изображение</label>
-                                <input type="text" class="form-control" name="image" placeholder="добавьте фото">
-                                @error('image')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <input type="submit" class="btn btn-primary" value="Добавить">
-                        </form>
                     </div>
+                    <input type="submit" class="btn btn-primary" value="Добавить">
+                    </form>
                 </div>
-                <!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
+            </div>
+            <!-- /.row -->
+    </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 @endsection

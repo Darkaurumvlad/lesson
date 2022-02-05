@@ -8,9 +8,9 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-center">
-                        <h1 class="m-0 mr-2">{{ $product->name }}</h1>
-                        <a href="{{ route('admin.product.edit', $product->id) }}" class="text-success"><i class="nav-icon fas fa-pen"></i></a>
-                        <form action="{{ route('admin.product.delete', $product->id) }}"
+                        <h1 class="m-0 mr-2">{{ $client->name }}</h1>
+                        <a href="{{ route('admin.client.edit', $client->id) }}" class="text-success"><i class="nav-icon fas fa-pen"></i></a>
+                        <form action="{{ route('admin.client.delete', $client->id) }}"
                               method="POST">
                             @csrf
                             @method('DELETE')
@@ -42,20 +42,24 @@
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
                                     <tr>
-                                        <td>Название</td>
-                                        <td>{{ $product->name }}</td>
+                                        <td>Имя</td>
+                                        <td>{{ $client->name }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Описание</td>
-                                        <td>{{ $product->description }}</td>
+                                        <td>Почта</td>
+                                        <td>{{ $client->email }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Цена</td>
-                                        <td>{{ $product->price }}</td>
+                                        <td>№-телефона</td>
+                                        <td>{{ $client->phone }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Изображение</td>
-                                        <td>{{ $product->image }}</td>
+                                        <td>Адресс</td>
+                                        <td>{{ $client->adds }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Фото</td>
+                                        <td>{{ $client->image }}</td>
                                     </tr>
 
                                     </tbody>
