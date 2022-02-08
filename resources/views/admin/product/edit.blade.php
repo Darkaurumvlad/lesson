@@ -47,10 +47,49 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="description">описание товара</label>
-                                <textarea name="description" class="form-control" id="description"
-                                          placeholder="описание товара">{{ $product->description }}</textarea>
-                                @error('description')
+                                <label>количество азота</label>
+                                <input type="text" class="form-control" name="norm_azot"
+                                       placeholder="введите количество"
+                                       value="{{ $product->norm_azot }}">
+                                @error('norm_azot')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>количество фосфора</label>
+                                <input type="text" class="form-control" name="norm_fosfor"
+                                       placeholder="введите количество"
+                                       value="{{ $product->norm_fosfor }}">
+                                @error('norm_fosfor')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>количество калия</label>
+                                <input type="text" class="form-control" name="norm_kaliy"
+                                       placeholder="введите количество"
+                                       value="{{ $product->norm_kaliy }}">
+                                @error('norm_kaliy')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="category">Культура</label>
+                                <select class="form-control" id="culture" name="culture_id">
+                                    @foreach($cultures as $culture)
+                                        <option
+                                            {{ $culture->id === $product->culture->id ? 'selected' : '' }}
+
+                                            value="{{ $culture->id }}">{{ $culture->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Район</label>
+                                <input type="text" class="form-control" name="district"
+                                       placeholder="введите название культуры"
+                                       value="{{ $product->district }}">
+                                @error('district')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -63,10 +102,18 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>изображение</label>
-                                <input type="text" class="form-control" name="image" placeholder=" добавьте изображение"
-                                       value="{{ $product->image }}">
-                                @error('image')
+                                <label for="description">описание товара</label>
+                                <textarea name="description" class="form-control" id="description"
+                                          placeholder="описание товара">{{ $product->description }}</textarea>
+                                @error('description')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>назначение товара</label>
+                                <input type="text" class="form-control" name="function" placeholder="назначение"
+                                       value="{{ $product->function }}">
+                                @error('function')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>

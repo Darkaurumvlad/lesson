@@ -25,12 +25,12 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'norm_azot' => 'required|double',
-            'norm_fosfor' => 'required|double',
-            'norm_kaliy' => 'required|double',
+            'norm_azot' => 'required|numeric',
+            'norm_fosfor' => 'required|numeric',
+            'norm_kaliy' => 'required|numeric',
             'culture_id' => 'required',
             'district' => 'required|string',
-            'price' => 'required|double',
+            'price' => 'required|numeric',
             'description' => 'required|string',
             'function' => 'required|string',
         ];

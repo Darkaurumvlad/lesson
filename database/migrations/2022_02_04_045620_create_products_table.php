@@ -19,12 +19,13 @@ class CreateProductsTable extends Migration
             $table->double('norm_azot', 8, 2);
             $table->double('norm_fosfor', 8, 2);
             $table->double('norm_kaliy', 8, 2);
-            $table->unsignedBigInteger('culture_id');
+            $table->foreignId('culture_id')->index()->constrained('cultures');
             $table->string('district');
             $table->double('price', 8, 2);
             $table->string('description');
             $table->string('function');
             $table->timestamps();
+
         });
     }
 

@@ -46,18 +46,37 @@
                                         <td>{{ $product->name }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Описание</td>
-                                        <td>{{ $product->description }}</td>
+                                        <td>Содержание азота</td>
+                                        <td>{{ $product->norm_azot }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Содержание фосфора</td>
+                                        <td>{{ $product->norm_fosfor }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Содержание калия</td>
+                                        <td>{{ $product->norm_kaliy }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Культура</td>
+                                        <td>{{ $product->culture_id }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Район</td>
+                                        <td>{{ $product->district }}</td>
                                     </tr>
                                     <tr>
                                         <td>Цена</td>
                                         <td>{{ $product->price }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Изображение</td>
-                                        <td>{{ $product->image }}</td>
+                                        <td>Описание</td>
+                                        <td>{{ $product->description }}</td>
                                     </tr>
-
+                                    <tr>
+                                        <td>Назначение</td>
+                                        <td>{{ $product->function }}</td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>

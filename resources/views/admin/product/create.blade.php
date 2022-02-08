@@ -91,13 +91,13 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="description">Назначение</label>
-                                <textarea name="function" class="form-control"
-                                          placeholder="назначение товара"></textarea>
+                                <label>Назначение</label>
+                                <input type="text" class="form-control" name="function" placeholder="назначение">
                                 @error('function')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
+
                             <input type="submit" class="btn btn-primary" value="Добавить">
                         </form>
                     </div>
