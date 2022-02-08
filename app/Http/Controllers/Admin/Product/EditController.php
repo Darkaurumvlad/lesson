@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin\Product;
 use App\Http\Controllers\Controller;
 use App\Models\Culture;
 use App\Models\Product;
-use Illuminate\Http\Request;
 
 class EditController extends Controller
 {

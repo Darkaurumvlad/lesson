@@ -25,10 +25,14 @@ class UpdateRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|string|email',
-            'phone' => 'required|string',
-            'adds' => 'required|string',
-            'image' => 'required|string',
+            'norm_azot' => 'required|numeric',
+            'norm_fosfor' => 'required|numeric',
+            'norm_kaliy' => 'required|numeric',
+            'culture_id' => 'required',
+            'district' => 'required|string',
+            'price' => 'required|numeric',
+            'description' => 'required|string',
+            'function' => 'required|string',
         ];
     }
 }

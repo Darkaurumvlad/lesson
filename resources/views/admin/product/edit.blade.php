@@ -73,16 +73,8 @@
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label for="category">Культура</label>
-                                <select class="form-control" id="culture" name="culture_id">
-                                    @foreach($cultures as $culture)
-                                        <option
-                                            {{ $culture->id === $product->culture->id ? 'selected' : '' }}
+                            <div>
 
-                                            value="{{ $culture->id }}">{{ $culture->name }}</option>
-                                    @endforeach
-                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Район</label>
@@ -100,6 +92,17 @@
                                 @error('price')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="category">Культура</label>
+                                <select class="form-control" id="culture" name="culture_id">
+                                    @foreach($cultures as $culture)
+                                        <option
+                                            {{ $culture->id == $product->culture_id ? "selected" : '' }}
+
+                                            value="{{ $culture->id }}">{{ $culture->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="description">описание товара</label>

@@ -12,9 +12,9 @@ class UpdateController extends Controller
     public function __invoke(UpdateRequest $request, Product $product)
     {
         $data = $request->validated();
-        if (Product::where('name', $data['name'])->first() != null) {
-            return redirect()->back()->with('success', 'Такой товар уже существует');
-        }
+//        if (Product::where('name', $data['name'])->first() != null) {
+//            return redirect()->back()->with('success', 'Такой товар уже существует');
+//        }
         $product->update($data);
         return view('admin.product.show', compact('product'));
     }
