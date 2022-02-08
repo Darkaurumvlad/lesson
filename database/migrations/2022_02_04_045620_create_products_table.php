@@ -16,12 +16,12 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->double('norm_azot');
-            $table->double('norm_fosfor');
-            $table->double('norm_kaliy');
+            $table->double('norm_azot', 8, 2);
+            $table->double('norm_fosfor', 8, 2);
+            $table->double('norm_kaliy', 8, 2);
             $table->unsignedBigInteger('culture_id');
             $table->string('district');
-            $table->double('price');
+            $table->double('price', 8, 2);
             $table->string('description');
             $table->string('function');
             $table->timestamps();

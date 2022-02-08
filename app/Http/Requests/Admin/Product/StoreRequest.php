@@ -25,9 +25,14 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
+            'norm_azot' => 'required|double',
+            'norm_fosfor' => 'required|double',
+            'norm_kaliy' => 'required|double',
+            'culture_id' => 'required',
+            'district' => 'required|string',
+            'price' => 'required|double',
             'description' => 'required|string',
-            'price' => 'required|string',
-            'image' => 'required|string',
+            'function' => 'required|string',
         ];
     }
 }

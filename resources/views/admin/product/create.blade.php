@@ -64,7 +64,7 @@
                                         <option
                                             {{ old('culture_id') == $culture->id ? 'selected' : '' }}
 
-                                            value="{{ $culture->id }}">{{ $culture->title }}</option>
+                                            value="{{ $culture->id }}">{{ $culture->name }}</option>
                                     @endforeach
                                 </select>
                             </div>

@@ -39,9 +39,9 @@
                                     <thead>
                                     <tr>
                                         <th>название</th>
-                                        <th>описание</th>
+                                        <th>культура</th>
                                         <th>цена</th>
-                                        <th>изображение</th>
+                                        <th>описание</th>
                                         <th colspan="3" class="text-center">действие</th>
                                     </tr>
                                     </thead>
@@ -49,9 +49,9 @@
                                     @foreach($products as $product)
                                         <tr>
                                             <td>{{ $product->name }}</td>
-                                            <td>{{ $product->description }}</td>
+                                            <td>{{ $product->district }}</td>
                                             <td>{{ $product->price }}</td>
-                                            <td>{{ $product->image }}</td>
+                                            <td>{{ $product->description }}</td>
                                             <td class="text-center"><a href="{{ route('admin.product.show', $product->id) }}"><i
                                                         class="nav-icon fas fa-eye"></i></a></td>
                                             <td class="text-center"><a href="{{ route('admin.product.edit', $product->id) }}"
