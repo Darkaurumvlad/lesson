@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Culture_group;
+namespace App\Http\Requests\Admin\Culture;
 
 use Illuminate\Foundation\Http\FormRequest;
 

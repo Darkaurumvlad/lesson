@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Culture_group;
+namespace App\Http\Controllers\Admin\Culture;
 
 use App\Http\Controllers\Controller;
-use App\Models\Culture_group;
+use App\Models\Culture;
 
 class DeleteController extends Controller
 {
-    public function __invoke(Culture_group $culture_group)
+    public function __invoke(Culture $culture)
     {
-        $culture_group->delete();
-        return redirect()->route('admin.culture_group.index');
+        $culture->delete();
+        return redirect()->route('admin.culture.index');
     }
 }

@@ -22,6 +22,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
         Route::get('/', 'IndexController');
     });
 
+    Route::group(['namespace' => 'Culture', 'prefix' => 'cultures'], function () {
+        Route::get('/', 'IndexController')->name('admin.culture.index');
+        Route::get('/create', 'CreateController')->name('admin.culture.create');
+        Route::post('/create', 'StoreController')->name('admin.culture.store');
+        Route::get('/{culture}', 'ShowController')->name('admin.culture.show');
+        Route::get('/{culture}/edit', 'EditController')->name('admin.culture.edit');
+        Route::patch('/{culture}/', 'UpdateController')->name('admin.culture.update');
+        Route::delete('/{culture}/', 'DeleteController')->name('admin.culture.delete');
+    });
+
     Route::group(['namespace' => 'Product', 'prefix' => 'products'], function () {
         Route::get('/', 'IndexController')->name('admin.product.index');
         Route::get('/create', 'CreateController')->name('admin.product.create');

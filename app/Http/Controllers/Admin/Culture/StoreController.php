@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Culture_group;
+namespace App\Http\Controllers\Admin\Culture;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Culture_group\StoreRequest;
-use App\Models\Culture_group;
+use App\Http\Requests\Admin\Culture\StoreRequest;
+use App\Models\Culture;
 
 class StoreController extends Controller
 {
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-        Culture_group::firstOrCreate($data);
-        return redirect()->route('admin.culture_group.index');
+        Culture::firstOrCreate($data);
+        return redirect()->route('admin.culture.index');
     }
 }

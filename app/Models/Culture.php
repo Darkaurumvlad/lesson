@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Culture extends Model
 {
     use HasFactory;
 
-    protected $table = 'products';
+    protected $table = 'cultures';
     protected $guarded = false;
 
-    public function cultures()
+    public function products()
     {
-        return $this->belongsTo(Culture::class, 'culture_id', 'id');
+        return $this->hasMany(Product::class, 'culture_id', 'id');
     }
 }

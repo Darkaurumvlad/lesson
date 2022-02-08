@@ -13,6 +13,6 @@ class UpdateController extends Controller
         $data = $request->validated();
 
         $client->update($data);
-        return view('admin.clients.show', compact('client'));
+        return view('admin.client.show', compact('client'));
     }
 }

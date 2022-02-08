@@ -7,9 +7,9 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-center">
-                        <h1 class="m-0 mr-2">{{ $culture_group->name }}</h1>
-                        <a href="{{ route('admin.culture_group.edit', $culture_group->id) }}" class="text-success"><i class="fas fa-pencil-alt"></i></a>
-                        <form action="{{ route('admin.culture_group.delete', $culture_group->id) }}"
+                        <h1 class="m-0 mr-2">{{ $culture->name }}</h1>
+                        <a href="{{ route('admin.culture.edit', $culture->id) }}" class="text-success"><i class="fas fa-pencil-alt"></i></a>
+                        <form action="{{ route('admin.culture.delete', $culture->id) }}"
                               method="POST">
                             @csrf
                             @method('DELETE')
@@ -20,9 +20,9 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Главная</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('admin.culture_group.index') }}">Категории</a></li>
-                            <li class="breadcrumb-item active">{{ $culture_group->name }}</li>
+                            <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.culture.index') }}">Категории</a></li>
+                            <li class="breadcrumb-item active">{{ $culture->name }}</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -43,11 +43,11 @@
                                     <tbody>
                                         <tr>
                                             <td>ID</td>
-                                            <td>{{ $culture_group->id }}</td>
+                                            <td>{{ $culture->id }}</td>
                                         </tr>
                                         <tr>
                                             <td>Название</td>
-                                            <td>{{ $culture_group->name }}</td>
+                                            <td>{{ $culture->name }}</td>
                                         </tr>
                                     </tbody>
                                 </table>

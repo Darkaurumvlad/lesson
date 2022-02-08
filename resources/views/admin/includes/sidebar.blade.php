@@ -15,6 +15,14 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{ route('admin.culture.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-th-list"></i>
+                    <p>
+                        Культуры
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ route('admin.product.index') }}" class="nav-link">
                     <i class="nav-icon far fa-list-alt"></i>
                     <p>

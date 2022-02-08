@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Группы культур</h1>
+                        <h1 class="m-0">Культуры</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Главная</a></li>
-                            <li class="breadcrumb-item active">Группы культур</li>
+                            <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                            <li class="breadcrumb-item active">Культуры</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -26,7 +26,7 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-1 mb-3">
-                        <a href="{{ route('admin.culture_group.create') }}" class="btn btn-block btn-primary">Добавить</a>
+                        <a href="{{ route('admin.culture.create') }}" class="btn btn-block btn-primary">Добавить</a>
                     </div>
                 </div>
                 <div class="row">
@@ -43,16 +43,16 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($culture_groups as $culture_group)
+                                    @foreach($cultures as $culture)
                                         <tr>
-                                            <td>{{ $culture_group->id }}</td>
-                                            <td>{{ $culture_group->title }}</td>
-                                            <td class="text-center"><a href="{{ route('admin.culture_group.show', $culture_group->id) }}"><i
+                                            <td>{{ $culture->id }}</td>
+                                            <td>{{ $culture->name }}</td>
+                                            <td class="text-center"><a href="{{ route('admin.culture.show', $culture->id) }}"><i
                                                         class="far fa-eye"></i></a></td>
-                                            <td class="text-center"><a href="{{ route('admin.culture_group.edit', $culture_group->id) }}"
+                                            <td class="text-center"><a href="{{ route('admin.culture.edit', $culture->id) }}"
                                                    class="text-success"><i class="fas fa-pencil-alt"></i></a></td>
                                             <td class="text-center">
-                                                <form action="{{ route('admin.culture_group.delete', $culture_group->id) }}"
+                                                <form action="{{ route('admin.culture.delete', $culture->id) }}"
                                                       method="POST">
                                                     @csrf
                                                     @method('DELETE')

@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Culture_group;
+namespace App\Http\Controllers\Admin\Culture;
 
 use App\Http\Controllers\Controller;
-use App\Models\Culture_group;
+use App\Models\Culture;
 
 class IndexController extends Controller
 {
     public function __invoke()
     {
-        $culture_groups = Culture_group::all();
+        $cultures = Culture::all();
 
-        return view('admin.culture_group.index', compact('culture_groups'));
+        return view('admin.culture.index', compact('cultures'));
     }
 }

@@ -37,10 +37,41 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="description">описание товара</label>
-                                <textarea name="description" class="form-control" id="description"
-                                          placeholder="описание товара"></textarea>
-                                @error('description')
+                                <label>количество азота</label>
+                                <input type="text" class="form-control" name="norm_azot" placeholder="введите количество">
+                                @error('norm_azot')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>количество фосфора</label>
+                                <input type="text" class="form-control" name="norm_fosfor" placeholder="введите количество">
+                                @error('norm_fosfor')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>количество калия</label>
+                                <input type="text" class="form-control" name="norm_kaliy" placeholder="введите количество">
+                                @error('norm_kaliy')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="category">Culture</label>
+                                <select class="form-control" name="culture_id">
+                                    @foreach($cultures as $culture)
+                                        <option
+                                            {{ old('culture_id') == $culture->id ? 'selected' : '' }}
+
+                                            value="{{ $culture->id }}">{{ $culture->title }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Район</label>
+                                <input type="text" class="form-control" name="district" placeholder="введите район">
+                                @error('district')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -52,9 +83,18 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>изображение</label>
-                                <input type="text" class="form-control" name="image" placeholder=" добавьте изображение">
-                                @error('image')
+                                <label for="description">Описание товара</label>
+                                <textarea name="description" class="form-control"
+                                          placeholder="описание товара"></textarea>
+                                @error('description')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Назначение</label>
+                                <textarea name="function" class="form-control"
+                                          placeholder="назначение товара"></textarea>
+                                @error('function')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>

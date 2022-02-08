@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Admin\Product;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Culture;
 
 class CreateController extends Controller
 {
     public function __invoke()
     {
-        return view('admin.products.create');
+        $cultures = Culture::all();
+        //dd($cultures);
+        return view('admin.product.create', compact('cultures'));
     }
 }

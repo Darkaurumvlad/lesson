@@ -16,6 +16,6 @@ class UpdateController extends Controller
             return redirect()->back()->with('success', 'Такой товар уже существует');
         }
         $product->update($data);
-        return view('admin.products.show', compact('product'));
+        return view('admin.product.show', compact('product'));
     }
 }

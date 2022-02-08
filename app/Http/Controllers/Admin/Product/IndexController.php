@@ -11,6 +11,6 @@ class IndexController extends Controller
     public function __invoke()
     {
         $products = Product::all();
-        return view('admin.products.index', compact('products'));
+        return view('admin.product.index', compact('products'));
     }
 }

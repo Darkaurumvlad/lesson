@@ -11,6 +11,6 @@ class ShowController extends Controller
     public function __invoke(Product $product)
     {
 
-        return view('admin.products.show', compact('product'));
+        return view('admin.product.show', compact('product'));
     }
 }

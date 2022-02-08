@@ -16,9 +16,14 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
-            $table->string('price');
-            $table->string('image')->nullable();
+            $table->double('norm_azot');
+            $table->double('norm_fosfor');
+            $table->double('norm_kaliy');
+            $table->unsignedBigInteger('culture_id');
+            $table->string('district');
+            $table->double('price');
+            $table->string('description');
+            $table->string('function');
             $table->timestamps();
         });
     }
