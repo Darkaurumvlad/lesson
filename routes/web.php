@@ -62,8 +62,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
         Route::delete('/{user}', 'DeleteController')->name('admin.user.delete');
     });
 
-    Route::group(['namespace' => 'Basket', 'prefix' => 'baskets'], function () {
-        Route::get('/', 'IndexController')->name('admin.basket.index');
+    Route::group(['namespace' => 'Basket', 'prefix' => 'basketproducts'], function () {
+        Route::get('/', 'BasketproductController@index')->name('admin.basketproduct.index');
+        Route::post('/{id}/restore', 'BasketproductController@restore')->name('admin.basketproduct.restore');
 
     });
 });

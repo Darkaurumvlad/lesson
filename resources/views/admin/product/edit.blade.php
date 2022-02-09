@@ -100,10 +100,11 @@
                                         @if($culture->id == $product->culture_id)
                                             <option value=""></option>
                                         @else
-                                        <option
-{{--                                                {{ $culture->id == $product->culture_id ? "selected" : "" }}--}}
-                                            value="{{ $culture->id }}">{{ $culture->name }}</option>
+                                        <option value="{{ $culture->id }}">{{ $culture->name }}</option>
                                         @endif
+{{--                                    <option--}}
+{{--                                        {{ ($culture->id == $product->culture_id) ? 'selected' : '' }}--}}
+{{--                                        value="{{ $culture->id }}">{{ $culture->name }}</option>--}}
                                     @endforeach
                                 </select>
                             </div>
