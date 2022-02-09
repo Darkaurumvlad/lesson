@@ -39,34 +39,18 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>цена товара</label>
-                                <input type="text" class="form-control" name="email" placeholder="новый почтовый ящик"
-                                       value="{{ $client->email }}">
-                                @error('email')
+                                <label>стоимость поставки</label>
+                                <input type="text" class="form-control" name="delivery_cost" placeholder="стоимость поставки"
+                                       value="{{ $client->delivery_cost }}">
+                                @error('delivery_cost')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>цена товара</label>
-                                <input type="text" class="form-control" name="phone" placeholder="укажите новый №-телефона"
-                                       value="{{ $client->phone }}">
-                                @error('phone')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label>цена товара</label>
-                                <input type="text" class="form-control" name="adds" placeholder="укажите новый адресс"
-                                       value="{{ $client->adds }}">
-                                @error('adds')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label>изображение</label>
-                                <input type="text" class="form-control" name="image" placeholder="новое фото"
-                                       value="{{ $client->image }}">
-                                @error('image')
+                                <label>название региона</label>
+                                <input type="text" class="form-control" name="region" placeholder="введите регион"
+                                       value="{{ $client->region }}">
+                                @error('region')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>

@@ -42,24 +42,20 @@
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
                                     <tr>
-                                        <td>Имя</td>
+                                        <td>Имя клиента</td>
                                         <td>{{ $client->name }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Почта</td>
-                                        <td>{{ $client->email }}</td>
+                                        <td>Дата регистрации</td>
+                                        <td>{{ $client->agreement_date }}</td>
                                     </tr>
                                     <tr>
-                                        <td>№-телефона</td>
-                                        <td>{{ $client->phone }}</td>
+                                        <td>стоимость поставки</td>
+                                        <td>{{ $client->delivery_cost }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Адресс</td>
-                                        <td>{{ $client->adds }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Фото</td>
-                                        <td>{{ $client->image }}</td>
+                                        <td>Регион</td>
+                                        <td>{{ $client->region }}</td>
                                     </tr>
 
                                     </tbody>

@@ -59,7 +59,7 @@
                                     </tr>
                                     <tr>
                                         <td>Культура</td>
-                                        <td>{{ $product->culture_id }}</td>
+                                        <td>{{ $product->culture->name }}</td>
                                     </tr>
                                     <tr>
                                         <td>Район</td>

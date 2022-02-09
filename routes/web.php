@@ -61,6 +61,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
         Route::patch('/{user}', 'UpdateController')->name('admin.user.update');
         Route::delete('/{user}', 'DeleteController')->name('admin.user.delete');
     });
+
+    Route::group(['namespace' => 'Basket', 'prefix' => 'baskets'], function () {
+        Route::get('/', 'IndexController')->name('admin.basket.index');
+
+    });
 });
 
 Auth::routes();

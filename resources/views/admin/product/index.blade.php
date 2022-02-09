@@ -49,7 +49,7 @@
                                     @foreach($products as $product)
                                         <tr>
                                             <td>{{ $product->name }}</td>
-                                            <td>{{ $product->culture_id }}</td>
+                                            <td>{{ $product->culture->name }}</td>
                                             <td>{{ $product->price }}</td>
                                             <td>{{ $product->description }}</td>
                                             <td class="text-center"><a href="{{ route('admin.product.show', $product->id) }}"><i

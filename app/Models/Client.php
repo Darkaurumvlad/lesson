@@ -12,4 +12,6 @@ class Client extends Model
 
     protected $table = 'clients';
     protected $guarded = false;
+
+    public $timestamps = false;
 }

@@ -25,10 +25,8 @@ class UpdateRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|string|email',
-            'phone' => 'required|string',
-            'adds' => 'required|string',
-            'image' => 'required|string',
+            'delivery_cost' => 'required|numeric',
+            'region' => 'required|string',
         ];
     }
 }

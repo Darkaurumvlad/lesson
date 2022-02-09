@@ -38,6 +38,14 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('admin.basket.index') }}" class="nav-link">
+                    <i class="nav-icon fa-solid fa-trash"></i>
+                    <p>
+                        Корзина
+                    </p>
+                </a>
+            </li>
         </ul>
     </div>
     <!-- /.sidebar -->

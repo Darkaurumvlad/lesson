@@ -38,34 +38,26 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>почта клиента</label>
-                                <input type="text" class="form-control" name="email" placeholder="укажите почту"
-                                       value="{{ old('email') }}">
-                                @error('email')
+                                <label>стоимость поставки</label>
+                                <input type="text" class="form-control" name="delivery_cost" placeholder="укажите стоимость поставки"
+                                       value="{{ old('delivery_cost') }}">
+                                @error('delivery_cost')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>номер телефонаа</label>
-                                <input type="text" class="form-control" name="phone" placeholder="укажите №-телефона"
-                                       value="{{ old('phone') }}">
-                                @error('phone')
+                                <label>регион</label>
+                                <input type="text" class="form-control" name="region" placeholder="укажите регион"
+                                       value="{{ old('region') }}">
+                                @error('region')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>адресс</label>
-                                <input type="text" class="form-control" name="adds" placeholder="укажите адресс"
-                                       value="{{ old('adds') }}">
-                                @error('adds')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label>изображение</label>
-                                <input type="text" class="form-control" name="image" placeholder="добавьте фото"
-                                       value="{{ old('image') }}">
-                                @error('image')
+                                <label>дата регистрации</label>
+                                <input type="text" class="form-control" name="agreement_date" placeholder="укажите дату"
+                                       value="{{ old('agreement_date') }}">
+                                @error('agreement_date')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>

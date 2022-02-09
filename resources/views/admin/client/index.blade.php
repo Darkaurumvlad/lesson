@@ -38,11 +38,10 @@
                                 <table class="table table-hover text-nowrap">
                                     <thead>
                                     <tr>
-                                        <th>имя</th>
-                                        <th>почта</th>
-                                        <th>телефон</th>
-                                        <th>адресс</th>
-                                        <th>изображение</th>
+                                        <th>Имя клиента</th>
+                                        <th>Дата регистрации</th>
+                                        <th>Стоимость поставки</th>
+                                        <th>Регион</th>
                                         <th colspan="3" class="text-center">действие</th>
                                     </tr>
                                     </thead>
@@ -50,10 +49,10 @@
                                     @foreach($clients as $client)
                                         <tr>
                                             <td>{{ $client->name }}</td>
-                                            <td>{{ $client->email }}</td>
-                                            <td>{{ $client->phone }}</td>
-                                            <td>{{ $client->adds }}</td>
-                                            <td>{{ $client->image }}</td>
+                                            <td>{{ $client->agreement_date }}</td>
+                                            <td>{{ $client->delivery_cost }}</td>
+                                            <td>{{ $client->region }}</td>
+
                                             <td class="text-center"><a href="{{ route('admin.client.show', $client->id) }}"><i
                                                         class="nav-icon fas fa-eye"></i></a></td>
                                             <td class="text-center"><a href="{{ route('admin.client.edit', $client->id) }}"

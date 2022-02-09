@@ -97,10 +97,13 @@
                                 <label for="category">Культура</label>
                                 <select class="form-control" id="culture" name="culture_id">
                                     @foreach($cultures as $culture)
+                                        @if($culture->id == $product->culture_id)
+                                            <option value=""></option>
+                                        @else
                                         <option
-                                                {{ $culture->id == $product->culture_id ? "selected" : "" }}
-
+{{--                                                {{ $culture->id == $product->culture_id ? "selected" : "" }}--}}
                                             value="{{ $culture->id }}">{{ $culture->name }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Product;
+namespace App\Http\Controllers\Admin\Basket;
 
 use App\Http\Controllers\Controller;
 use App\Models\Culture;
@@ -11,7 +11,8 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $products = Product::all();
+        $products = Product::withTrashed();
+        dd($products);
 
         return view('admin.product.index', compact('products'));
     }
