@@ -98,7 +98,7 @@
                                 <select class="form-control" id="culture" name="culture_id">
                                     @foreach($cultures as $culture)
                                         <option
-                                            {{ $culture->id == $product->culture_id ? "selected" : '' }}
+                                                {{ $culture->id == $product->culture_id ? "selected" : "" }}
 
                                             value="{{ $culture->id }}">{{ $culture->name }}</option>
                                     @endforeach

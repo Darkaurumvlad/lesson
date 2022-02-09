@@ -31,35 +31,40 @@
                             @csrf
                             <div class="form-group">
                                 <label>имя клиента</label>
-                                <input type="text" class="form-control" name="name" placeholder="введите имя">
+                                <input type="text" class="form-control" name="name" placeholder="введите имя"
+                                       value="{{ old('name') }}">
                                 @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label>почта клиента</label>
-                                <input type="text" class="form-control" name="email" placeholder="укажите почту">
+                                <input type="text" class="form-control" name="email" placeholder="укажите почту"
+                                       value="{{ old('email') }}">
                                 @error('email')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label>номер телефонаа</label>
-                                <input type="text" class="form-control" name="phone" placeholder="укажите №-телефона">
+                                <input type="text" class="form-control" name="phone" placeholder="укажите №-телефона"
+                                       value="{{ old('phone') }}">
                                 @error('phone')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label>адресс</label>
-                                <input type="text" class="form-control" name="adds" placeholder="укажите адресс">
+                                <input type="text" class="form-control" name="adds" placeholder="укажите адресс"
+                                       value="{{ old('adds') }}">
                                 @error('adds')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label>изображение</label>
-                                <input type="text" class="form-control" name="image" placeholder="добавьте фото">
+                                <input type="text" class="form-control" name="image" placeholder="добавьте фото"
+                                       value="{{ old('image') }}">
                                 @error('image')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror

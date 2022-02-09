@@ -31,28 +31,32 @@
                             @csrf
                             <div class="form-group">
                                 <label>название товара</label>
-                                <input type="text" class="form-control" name="name" placeholder="введите название">
+                                <input type="text" class="form-control" name="name" placeholder="введите название"
+                                       value="{{ old('name') }}">
                                 @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label>количество азота</label>
-                                <input type="text" class="form-control" name="norm_azot" placeholder="введите количество">
+                                <input type="text" class="form-control" name="norm_azot" placeholder="введите количество"
+                                       value="{{ old('norm_azot') }}">
                                 @error('norm_azot')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label>количество фосфора</label>
-                                <input type="text" class="form-control" name="norm_fosfor" placeholder="введите количество">
+                                <input type="text" class="form-control" name="norm_fosfor" placeholder="введите количество"
+                                       value="{{ old('norm_fosfor') }}">
                                 @error('norm_fosfor')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label>количество калия</label>
-                                <input type="text" class="form-control" name="norm_kaliy" placeholder="введите количество">
+                                <input type="text" class="form-control" name="norm_kaliy" placeholder="введите количество"
+                                       value="{{ old('norm_kaliy') }}">
                                 @error('norm_kaliy')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -70,14 +74,16 @@
                             </div>
                             <div class="form-group">
                                 <label>Район</label>
-                                <input type="text" class="form-control" name="district" placeholder="введите район">
+                                <input type="text" class="form-control" name="district" placeholder="введите район"
+                                       value="{{ old('district') }}">
                                 @error('district')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label>цена товара</label>
-                                <input type="text" class="form-control" name="price" placeholder="укажите цену">
+                                <input type="text" class="form-control" name="price" placeholder="укажите цену"
+                                       value="{{ old('price') }}">
                                 @error('price')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -85,14 +91,15 @@
                             <div class="form-group">
                                 <label for="description">Описание товара</label>
                                 <textarea name="description" class="form-control"
-                                          placeholder="описание товара"></textarea>
+                                          placeholder="описание товара">{{ old('description') }}</textarea>
                                 @error('description')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label>Назначение</label>
-                                <input type="text" class="form-control" name="function" placeholder="назначение">
+                                <input type="text" class="form-control" name="function" placeholder="назначение"
+                                       value="{{ old('function') }}">
                                 @error('function')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror

@@ -30,7 +30,8 @@
                         <form action="{{ route('admin.culture.store') }}" method="POST" class="w-25">
                             @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" name="name" placeholder="Название культуры">
+                                <input type="text" class="form-control" name="name" placeholder="Название культуры"
+                                       value="{{ old('name') }}">
                                 @error('name')
                                 <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror

@@ -12,12 +12,12 @@ class UpdateController extends Controller
     {
         $data = $request->validated();
         $culture_prov = Culture::where('name', $data['name'])->get();
-        //dd($category);
+        //dd($culture_prov);
         foreach ($culture_prov as $cult)
             if ($cult->name == true) {
                 return redirect()->back()->with('success', 'Такая категория уже существует');
             }
-        $culture>update($data);
+        $culture->update($data);
         return view('admin.culture.show', compact('culture'));
     }
 }
