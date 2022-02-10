@@ -62,9 +62,23 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
         Route::delete('/{user}', 'DeleteController')->name('admin.user.delete');
     });
 
+    Route::group(['namespace' => 'Archive', 'prefix' => 'archives'], function () {
+        Route::get('/', 'ArchiveController@index')->name('admin.archive.index');
+        Route::get('/product/{id}', 'ArchiveController@product')->name('admin.archive.product');
+        Route::get('/client/{id}', 'ArchiveController@client')->name('admin.archive.client');
+        Route::get('/culture/{id}', 'ArchiveController@culture')->name('admin.archive.culture');
+        Route::get('/user/{id}', 'ArchiveController@user')->name('admin.archive.user');
+
+    });
     Route::group(['namespace' => 'Basket', 'prefix' => 'basketproducts'], function () {
         Route::get('/', 'BasketproductController@index')->name('admin.basketproduct.index');
         Route::post('/{id}/restore', 'BasketproductController@restore')->name('admin.basketproduct.restore');
+
+    });
+
+    Route::group(['namespace' => 'Basket', 'prefix' => 'basketclients'], function () {
+        Route::get('/', 'BasketclientController@index')->name('admin.basketclient.index');
+        Route::post('/{id}/restore', 'BasketclientController@restore')->name('admin.basketclient.restore');
 
     });
 });

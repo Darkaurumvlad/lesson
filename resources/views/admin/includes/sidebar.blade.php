@@ -39,10 +39,10 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('admin.basketproduct.index') }}" class="nav-link">
+                <a href="{{ route('admin.archive.index') }}" class="nav-link">
                     <i class="nav-icon fa-solid fa-trash"></i>
                     <p>
-                        Корзина
+                        Архив
                     </p>
                 </a>
             </li>
