@@ -17,9 +17,11 @@
                             @endforeach
                         </tr>
                         <tr>
-                            <td>
-                                {{ $products->links() }}
-                            </td>
+                            <div class="text-right">
+                                <td>
+                                    {{ $products->links() }}
+                                </td>
+                            </div>
                         </tr>
                     </table>
                 </td>

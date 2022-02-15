@@ -71,6 +71,9 @@
                                     @endforeach
                                     </tbody>
                                 </table>
+                                <div class="row mt-3">
+                                    {{ $products->links() }}
+                                </div>
                             </div>
                             <!-- /.card-body -->
                         </div>

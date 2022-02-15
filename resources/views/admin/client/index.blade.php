@@ -29,6 +29,10 @@
                     <div class="col-1 mb-3">
                         <a href="{{ route('admin.client.create') }}" class="btn btn-block btn-primary">Добавить</a>
                     </div>
+                    <form class="d-flex" action="{{ route('admin.client.index') }}">
+                        <input class="form-control me-2" name="name" type="search" placeholder="Найти по имени" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Поиск</button>
+                    </form>
                 </div>
                 <div class="row">
                     <div class="col-9">
@@ -72,6 +76,9 @@
                                     @endforeach
                                     </tbody>
                                 </table>
+                                <div class="row mt-3">
+                                    {{ $clients->links() }}
+                                </div>
                             </div>
                             <!-- /.card-body -->
                         </div>
