@@ -25,12 +25,12 @@ class FilterRequest extends FormRequest
     {
         return [
             'name' => 'string',
-            'norm_azot' => 'numeric',
-            'norm_fosfor' => 'numeric',
-            'norm_kaliy' => 'numeric',
+            'norm_azot' => '',
+            'norm_fosfor' => '',
+            'norm_kaliy' => '',
             'culture_id' => '',
             'district' => 'string',
-            'price' => 'numeric',
+            'price' => '',
             'description' => 'string',
             'function' => 'string',
         ];
