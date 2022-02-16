@@ -12,6 +12,7 @@ class IndexController extends Controller
     public function __invoke(FilterRequest $request)
     {
         $data = $request->validated();
+        //dd($data);
         if ($data !== []) {
             $filter = app()->make(ClientFilter::class, ['queryParams' => array_filter($data)]);
             $clients = Client::filter($filter)->orderBy('agreement_date', 'DESC')->paginate(5);

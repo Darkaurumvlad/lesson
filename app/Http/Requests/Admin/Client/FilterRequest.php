@@ -25,7 +25,7 @@ class FilterRequest extends FormRequest
     {
         return [
             'name' => 'string',
-            'delivery_cost' => 'numeric',
+            'delivery_cost' => '',
             'region' => 'string',
             'agreement_date' => 'string',
         ];

@@ -33,6 +33,27 @@
                         <input class="form-control me-2" name="name" type="search" placeholder="Найти по имени" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Поиск</button>
                     </form>
+                    <form class="d-flex" action="{{ route('admin.client.index') }} ">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-3">
+                                    <input type="text" name="delivery_cost[]" class="form-control" placeholder="минимальная цена">
+                                </div>
+                                <div class="col-4">
+                                    <input type="text" name="delivery_cost[]" class="form-control" placeholder="максимальная цена">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline-success" type="submit">Поиск</button>
+                    </form>
+                    <form class="d-flex" action="{{ route('admin.client.index') }}">
+                        <input class="form-control me-2" name="region" type="search" placeholder="Найти по региону" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Поиск</button>
+                    </form>
+                    <form class="d-flex" action="{{ route('admin.client.index') }}">
+                        <input class="form-control me-2" name="agreement_date" type="search" placeholder="Найти по дате регистрации" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Поиск</button>
+                    </form>
                 </div>
                 <div class="row">
                     <div class="col-9">
@@ -77,7 +98,7 @@
                                     </tbody>
                                 </table>
                                 <div class="row mt-3">
-                                    {{ $clients->links() }}
+                                    {{ $clients->withQueryString()->links() }}
                                 </div>
                             </div>
                             <!-- /.card-body -->
