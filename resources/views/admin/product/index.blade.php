@@ -35,6 +35,23 @@
                         <div class="card">
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-0">
+                                <form action="">
+                                    <input type="checkbox" name="sort" value="name_up">
+                                    <label for="vehicle1">сортировать по наименованию по
+                                        алфавиту</label><br>
+                                    <input type="checkbox" name="sort" value="name_down">
+                                    <label for="vehicle1">сортировать по наименованию с конца алфавита</label><br>
+                                    <button type="submit">сортировать по наименованию</button>
+                                </form>
+                                <form action="">
+                                    <input type="checkbox" name="sort" value="price_up">
+                                    <label for="vehicle1">сортировать по цене по
+                                        возрастанию</label><br>
+                                    <input type="checkbox" name="sort" value="price_down">
+                                    <label for="vehicle1">сортировать по цене по
+                                        убыванию</label><br>
+                                    <button type="submit">сортировать по цене</button>
+                                </form>
                                 <table class="table table-hover text-nowrap">
                                     <thead>
                                     <tr>
@@ -167,9 +184,10 @@
                         <form class="d-flex" action="{{ route('admin.product.index') }}">
                             <div class="form-group">
                                 <label>Культуры</label>
-                                <select name="culture_id[]" class="select2" multiple="multiple" data-placeholder="Выберите тэги" style="width: 100%;">
-                                    @foreach($products as $product)
-                                        <option value="{{ $product->culture->id }}">{{ $product->culture->name }}</option>
+                                <select name="culture_id[]" class="select2" multiple="multiple"
+                                        data-placeholder="Выберите тэги" style="width: 100%;">
+                                    @foreach($cultures as $culture)
+                                        <option value="{{ $culture->id }}">{{ $culture->name }}</option>
                                     @endforeach
                                 </select>
                                 <button class="btn btn-outline-success" type="submit">Поиск</button>
@@ -199,14 +217,16 @@
                     </div>
                     <div class="col-2">
                         <form class="d-flex" action="{{ route('admin.product.index') }}">
-                            <input class="form-control me-2" name="description" type="search" placeholder="Найти по описанию"
+                            <input class="form-control me-2" name="description" type="search"
+                                   placeholder="Найти по описанию"
                                    aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Поиск</button>
                         </form>
                     </div>
                     <div class="col-2">
                         <form class="d-flex" action="{{ route('admin.product.index') }}">
-                            <input class="form-control me-2" name="function" type="search" placeholder="Найти по назначению"
+                            <input class="form-control me-2" name="function" type="search"
+                                   placeholder="Найти по назначению"
                                    aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Поиск</button>
                         </form>

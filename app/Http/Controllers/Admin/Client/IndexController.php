@@ -18,7 +18,24 @@ class IndexController extends Controller
             $clients = Client::filter($filter)->orderBy('agreement_date', 'DESC')->paginate(5);
             return view('admin.client.index', compact('clients'));
         }
-       $clients = Client::paginate(10);
+
+        if ($request->sort == 'name_up') {
+            $pole = 'name';
+            $sort = 'ASC';
+        }
+        if ($request->sort == 'name_down') {
+            $pole = 'name';
+            $sort = 'DESC';
+        }
+        if ($request->sort == 'delivery_cost_up') {
+            $pole = 'delivery_cost';
+            $sort = 'ASC';
+        }
+        if ($request->sort == 'delivery_cost_down') {
+            $pole = 'delivery_cost';
+            $sort = 'DESC';
+        }
+       $clients = Client::orderBy($pole, $sort)->paginate(10);
         return view('admin.client.index', compact('clients'));
     }
 }

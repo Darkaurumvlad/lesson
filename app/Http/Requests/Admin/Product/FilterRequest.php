@@ -33,6 +33,8 @@ class FilterRequest extends FormRequest
             'price' => '',
             'description' => 'string',
             'function' => 'string',
+            'name_up' => '',
+            'name_down' => '',
         ];
     }
 }
