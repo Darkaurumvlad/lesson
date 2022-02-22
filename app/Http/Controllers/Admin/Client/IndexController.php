@@ -12,27 +12,29 @@ class IndexController extends Controller
     public function __invoke(FilterRequest $request)
     {
         $data = $request->validated();
+       //dd($data);
         $pole = 'name';
         $sort = 'ASC';
-        if ($data !== []) {
+        if (isset($data['name']) !== false || isset($data['delivery_cost']) !== false || isset($data['region']) !== false
+            || isset($data['agreement_date']) !== false) {
             $filter = app()->make(ClientFilter::class, ['queryParams' => array_filter($data)]);
             $clients = Client::filter($filter)->orderBy('agreement_date', 'DESC')->paginate(5);
             return view('admin.client.index', compact('clients'));
         }
 
-        if ($request->sort == 'name_up') {
+        if (isset($data['sort']) == 'name_up') {
             $pole = 'name';
             $sort = 'ASC';
         }
-        if ($request->sort == 'name_down') {
+        if (isset($data['sort']) == 'name_down') {
             $pole = 'name';
             $sort = 'DESC';
         }
-        if ($request->sort == 'delivery_cost_up') {
+        if (isset($data['sort']) == 'delivery_cost_up') {
             $pole = 'delivery_cost';
             $sort = 'ASC';
         }
-        if ($request->sort == 'delivery_cost_down') {
+        if (isset($data['sort']) == 'delivery_cost_down') {
             $pole = 'delivery_cost';
             $sort = 'DESC';
         }

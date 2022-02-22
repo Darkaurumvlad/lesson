@@ -33,23 +33,6 @@
                 <div class="row">
                     <div class="col-9">
                         <div class="card">
-                            <form action="">
-                                <input type="checkbox" name="sort" value="name_up">
-                                <label for="vehicle1">сортировать по имени по
-                                    алфавиту</label><br>
-                                <input type="checkbox" name="sort" value="name_down">
-                                <label for="vehicle1">сортировать по имени с конца алфавита</label><br>
-                                <button type="submit">сортировать по имени</button>
-                            </form>
-                            <form action="">
-                                <input type="checkbox" name="sort" value="delivery_cost_up">
-                                <label for="vehicle1">сортировать по стоимости поставки по
-                                    возрастанию</label><br>
-                                <input type="checkbox" name="sort" value="delivery_cost_down">
-                                <label for="vehicle1"> сортировать по
-                                стоимости поставки по убыванию</label><br>
-                                <button type="submit">сортировать по стоимости поставки</button>
-                            </form>
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
@@ -70,10 +53,12 @@
                                             <td>{{ $client->delivery_cost }}</td>
                                             <td>{{ $client->region }}</td>
 
-                                            <td class="text-center"><a href="{{ route('admin.client.show', $client->id) }}"><i
+                                            <td class="text-center"><a
+                                                    href="{{ route('admin.client.show', $client->id) }}"><i
                                                         class="nav-icon fas fa-eye"></i></a></td>
-                                            <td class="text-center"><a href="{{ route('admin.client.edit', $client->id) }}"
-                                                   class="text-success"><i class="nav-icon fas fa-pen"></i></a></td>
+                                            <td class="text-center"><a
+                                                    href="{{ route('admin.client.edit', $client->id) }}"
+                                                    class="text-success"><i class="nav-icon fas fa-pen"></i></a></td>
                                             <td class="text-center">
                                                 <form action="{{ route('admin.client.delete', $client->id) }}"
                                                       method="POST">
@@ -93,31 +78,43 @@
                                     {{ $clients->withQueryString()->links() }}
                                 </div>
                             </div>
-                            <form class="d-flex" action="{{ route('admin.client.index') }}">
-                                <input class="form-control me-2" name="name" type="search" placeholder="Найти по имени" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Поиск</button>
-                            </form>
-                            <form class="d-flex" action="{{ route('admin.client.index') }} ">
-                                <div class="card-body">
+                            <div class="row col-12">
+                                <form class="d-flex" action="">
+                                    <div class="row col-10">
+                                        <input type="checkbox" name="sort" value="name_up">
+                                        <label for="vehicle1">сортировать по имени по
+                                            алфавиту</label><br>
+                                        <input type="checkbox" name="sort" value="name_down">
+                                        <label for="vehicle1">сортировать по имени с конца алфавита</label><br>
+                                        <input type="checkbox" name="sort" value="delivery_cost_up">
+                                        <label for="vehicle1">сортировать по стоимости поставки по
+                                            возрастанию</label><br>
+                                        <input type="checkbox" name="sort" value="delivery_cost_down">
+                                        <label for="vehicle1">сортировать по
+                                            стоимости поставки по убыванию</label><br>
+                                    </div>
+                                    <div class="row col-10">
+                                        <input class="form-control me-2" name="name" type="search"
+                                               placeholder="Найти по имени"
+                                               aria-label="Search">
+                                        <input class="form-control me-2" name="region" type="search"
+                                               placeholder="Найти по региону" aria-label="Search">
+                                        <input class="form-control me-2" name="agreement_date" type="search"
+                                               placeholder="Найти по дате регистрации" aria-label="Search">
+                                    </div>
                                     <div class="row">
                                         <div class="col-3">
-                                            <input type="text" name="delivery_cost[]" class="form-control" placeholder="минимальная цена">
+                                            <input type="text" name="delivery_cost[]" class="form-control"
+                                                   placeholder="минимальная цена">
                                         </div>
                                         <div class="col-4">
-                                            <input type="text" name="delivery_cost[]" class="form-control" placeholder="максимальная цена">
+                                            <input type="text" name="delivery_cost[]" class="form-control"
+                                                   placeholder="максимальная цена">
                                         </div>
                                     </div>
-                                </div>
-                                <button class="btn btn-outline-success" type="submit">Поиск</button>
-                            </form>
-                            <form class="d-flex" action="{{ route('admin.client.index') }}">
-                                <input class="form-control me-2" name="region" type="search" placeholder="Найти по региону" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Поиск</button>
-                            </form>
-                            <form class="d-flex" action="{{ route('admin.client.index') }}">
-                                <input class="form-control me-2" name="agreement_date" type="search" placeholder="Найти по дате регистрации" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Поиск</button>
-                            </form>
+                                    <button class="btn btn-outline-success" type="submit">Поиск</button>
+                                </form>
+                            </div>
                             <!-- /.card-body -->
                         </div>
                     </div>

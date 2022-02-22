@@ -28,6 +28,7 @@ class FilterRequest extends FormRequest
             'delivery_cost' => '',
             'region' => 'string',
             'agreement_date' => 'string',
+            'sort' => '',
         ];
     }
 }
