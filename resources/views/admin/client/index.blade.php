@@ -79,20 +79,21 @@
                                 </div>
                             </div>
                             <div class="row col-12">
-                                <form class="d-flex" action="">
-                                    <div class="row col-10">
-                                        <input type="checkbox" name="sort" value="name_up">
-                                        <label for="vehicle1">сортировать по имени по
+                                <form>
+                                        <input type="checkbox" name="sort" value="name_up" id="sort1">
+                                        <label for="sort1">сортировать по имени по
                                             алфавиту</label><br>
-                                        <input type="checkbox" name="sort" value="name_down">
-                                        <label for="vehicle1">сортировать по имени с конца алфавита</label><br>
-                                        <input type="checkbox" name="sort" value="delivery_cost_up">
-                                        <label for="vehicle1">сортировать по стоимости поставки по
+                                        <input type="checkbox" name="sort" value="name_down" id="sort2">
+                                        <label for="sort2">сортировать по имени с конца алфавита</label><br>
+                                        <input type="checkbox" name="sort" value="delivery_cost_up" id="sort3">
+                                        <label for="sort3">сортировать по стоимости поставки по
                                             возрастанию</label><br>
-                                        <input type="checkbox" name="sort" value="delivery_cost_down">
-                                        <label for="vehicle1">сортировать по
+                                        <input type="checkbox" name="sort" value="delivery_cost_down" id="sort4">
+                                        <label for="sort4">сортировать по
                                             стоимости поставки по убыванию</label><br>
-                                    </div>
+                                    <button class="btn btn-outline-success" type="submit">Сортировать</button>
+                                </form>
+                                <form action="{{ route('admin.client.index') }}">
                                     <div class="row col-10">
                                         <input class="form-control me-2" name="name" type="search"
                                                placeholder="Найти по имени"

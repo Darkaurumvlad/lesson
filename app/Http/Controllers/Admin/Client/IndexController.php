@@ -12,7 +12,7 @@ class IndexController extends Controller
     public function __invoke(FilterRequest $request)
     {
         $data = $request->validated();
-       //dd($data);
+        dd($data);
         $pole = 'name';
         $sort = 'ASC';
         if (isset($data['name']) !== false || isset($data['delivery_cost']) !== false || isset($data['region']) !== false
@@ -22,23 +22,32 @@ class IndexController extends Controller
             return view('admin.client.index', compact('clients'));
         }
 
-        if (isset($data['sort']) == 'name_up') {
-            $pole = 'name';
-            $sort = 'ASC';
+        if (isset($data['sort']) == true) {
+            if ($data['sort'] == 'name_up') {
+                $pole = 'name';
+                $sort = 'ASC';
+            }
         }
-        if (isset($data['sort']) == 'name_down') {
-            $pole = 'name';
-            $sort = 'DESC';
+        if (isset($data['sort']) == true) {
+            if ($data['sort'] == 'name_down') {
+                $pole = 'name';
+                $sort = 'DESC';
+            }
         }
-        if (isset($data['sort']) == 'delivery_cost_up') {
-            $pole = 'delivery_cost';
-            $sort = 'ASC';
+
+        if (isset($data['sort']) == true) {
+            if ($data['sort'] == 'delivery_cost_up') {
+                $pole = 'delivery_cost';
+                $sort = 'ASC';
+            }
         }
-        if (isset($data['sort']) == 'delivery_cost_down') {
-            $pole = 'delivery_cost';
-            $sort = 'DESC';
+        if (isset($data['sort']) == true) {
+            if ($data['sort'] == 'delivery_cost_down') {
+                $pole = 'delivery_cost';
+                $sort = 'DESC';
+            }
         }
-       $clients = Client::orderBy($pole, $sort)->paginate(10);
+        $clients = Client::orderBy($pole, $sort)->paginate(10);
         return view('admin.client.index', compact('clients'));
     }
 }
