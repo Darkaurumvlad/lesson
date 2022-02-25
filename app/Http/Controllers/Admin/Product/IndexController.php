@@ -19,7 +19,6 @@ class IndexController extends Controller
         if ($data !== []) {
             $cultures = Culture::all();
             $filter = app()->make(ProductFilter::class, ['queryParams' => array_filter($data)]);
-//            $products = Product::filter($filter)->orderBy('updated_at', 'DESC')->paginate(5);
             $products = Product::filter($filter)->orderBy('updated_at', 'DESC')->paginate(5);
             return view('admin.product.index', compact('products', 'cultures'));
         }

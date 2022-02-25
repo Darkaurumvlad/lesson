@@ -27,12 +27,16 @@ class ClientFilter extends AbstractFilter
 
     public function name(Builder $builder, $value)
     {
+        //dd($value);
         $builder->where('name', 'like', "%{$value}%");
     }
 
     public function deliveryCost(Builder $builder, $value)
     {
-        $builder->whereBetween('delivery_cost', $value);
+        $from = isset($value[0]) ? $value[0] : 0;
+        $to = isset($value[1]) ? $value[1] : 99999999;
+
+        $builder->whereBetween('delivery_cost', [$from, $to]);
     }
 
     public function region(Builder $builder, $value)

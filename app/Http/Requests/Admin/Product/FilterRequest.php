@@ -24,17 +24,16 @@ class FilterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'string',
+            'name' => '',
             'norm_azot' => '',
             'norm_fosfor' => '',
             'norm_kaliy' => '',
             'culture_id' => '',
-            'district' => 'string',
+            'district' => '',
             'price' => '',
-            'description' => 'string',
-            'function' => 'string',
-            'name_up' => '',
-            'name_down' => '',
+            'description' => '',
+            'function' => '',
+            'sort' => '',
         ];
     }
 }

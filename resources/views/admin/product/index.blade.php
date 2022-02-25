@@ -41,9 +41,6 @@
                                         алфавиту</label><br>
                                     <input type="checkbox" name="sort" value="name_down">
                                     <label for="vehicle1">сортировать по наименованию с конца алфавита</label><br>
-                                    <button type="submit">сортировать по наименованию</button>
-                                </form>
-                                <form action="">
                                     <input type="checkbox" name="sort" value="price_up">
                                     <label for="vehicle1">сортировать по цене по
                                         возрастанию</label><br>
@@ -110,129 +107,65 @@
                 </div>
                 <!-- /.row -->
                 <div class="row">
-                    <div class="col-2">
-                        <form class="d-flex" action="{{ route('admin.product.index') }}">
-                            <input class="form-control me-2" name="name" type="search" placeholder="Найти по названию"
-                                   aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Поиск</button>
-                        </form>
-                    </div>
                     <div class="col-3">
                         <form class="d-flex" action="{{ route('admin.product.index') }} ">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div>
-                                        <lable>норма азота</lable>
-                                        <input type="text" name="norm_azot[]" class="form-control"
-                                               placeholder="минимальная норма">
+                            <div class="col-3">
+                                <lable>норма азота</lable>
+                                <input type="text" name="norm_azot[]" class="form-control"
+                                       placeholder="минимальная норма азота">
+                                <input type="text" name="norm_azot[]" class="form-control"
+                                       placeholder="максимальная норма азота">
+                            </div>
+                            <div class="col-3">
+                                <lable>норма фосфора</lable>
+                                <input type="text" name="norm_fosfor[]" class="form-control"
+                                       placeholder="минимальная норма фосфора">
+                                <input type="text" name="norm_fosfor[]" class="form-control"
+                                       placeholder="максимальная норма фосфора">
+                            </div>
+                            <div class="col-3">
+                                <lable>норма калия</lable>
+                                <input type="text" name="norm_kaliy[]" class="form-control"
+                                       placeholder="минимальная норма калия">
+                                <input type="text" name="norm_kaliy[]" class="form-control"
+                                       placeholder="максимальная норма калия">
+                            </div>
+                            <div class="col-3">
+                                <lable>поиск по цене</lable>
+                                <input type="text" name="price[]" class="form-control"
+                                       placeholder="минимальная цена">
+                                <input type="text" name="price[]" class="form-control"
+                                       placeholder="максимальная цена">
+                                <div class="container col-12">
+                                    <input  name="name" type="search"
+                                           placeholder="Найти по названию">
+                                    <input  name="district" type="search"
+                                           placeholder="Найти по району">
+                                    <input name="description" type="search"
+                                           placeholder="Найти по описанию">
+                                    <input name="function" type="search"
+                                           placeholder="Найти по назначению">
+                                    <div class="form-group">
+                                        <label>Культуры</label>
+                                        <select name="culture_id[]" class="select2" multiple="multiple"
+                                                data-placeholder="Выберите тэги" style="width: 100%;">
+                                            @foreach($cultures as $culture)
+                                                <option value="{{ $culture->id }}">{{ $culture->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        <button class="btn btn-outline-success" type="submit">Поиск</button>
+                                        @error('culture_id')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
-                                    <div>
-                                        <input type="text" name="norm_azot[]" class="form-control"
-                                               placeholder="максимальная норма">
-                                    </div>
-                                    <button class="btn btn-outline-success" type="submit">Поиск</button>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                    <div class="col-3">
-                        <form class="d-flex" action="{{ route('admin.product.index') }} ">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div>
-                                        <lable>норма фосфора</lable>
-                                        <input type="text" name="norm_fosfor[]" class="form-control"
-                                               placeholder="минимальная норма">
-                                    </div>
-                                    <div>
-                                        <input type="text" name="norm_fosfor[]" class="form-control"
-                                               placeholder="максимальная норма">
-                                    </div>
-                                    <button class="btn btn-outline-success" type="submit">Поиск</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-3">
-                        <form class="d-flex" action="{{ route('admin.product.index') }} ">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div>
-                                        <lable>норма калия</lable>
-                                        <input type="text" name="norm_kaliy[]" class="form-control"
-                                               placeholder="минимальная норма">
-                                    </div>
-                                    <div>
-                                        <input type="text" name="norm_kaliy[]" class="form-control"
-                                               placeholder="максимальная норма">
-                                    </div>
-                                    <button class="btn btn-outline-success" type="submit">Поиск</button>
-                                </div>
-                            </div>
-                        </form>
+
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-2">
-                        <form class="d-flex" action="{{ route('admin.product.index') }}">
-                            <input class="form-control me-2" name="district" type="search" placeholder="Найти по району"
-                                   aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Поиск</button>
-                        </form>
-                    </div>
-                    <div class="col-2">
-                        <form class="d-flex" action="{{ route('admin.product.index') }}">
-                            <div class="form-group">
-                                <label>Культуры</label>
-                                <select name="culture_id[]" class="select2" multiple="multiple"
-                                        data-placeholder="Выберите тэги" style="width: 100%;">
-                                    @foreach($cultures as $culture)
-                                        <option value="{{ $culture->id }}">{{ $culture->name }}</option>
-                                    @endforeach
-                                </select>
-                                <button class="btn btn-outline-success" type="submit">Поиск</button>
-                                @error('culture_id')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-3">
-                        <form class="d-flex" action="{{ route('admin.product.index') }} ">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div>
-                                        <lable>поиск по цене</lable>
-                                        <input type="text" name="price[]" class="form-control"
-                                               placeholder="минимальная цена">
-                                    </div>
-                                    <div>
-                                        <input type="text" name="price[]" class="form-control"
-                                               placeholder="максимальная цена">
-                                    </div>
-                                    <button class="btn btn-outline-success" type="submit">Поиск</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-2">
-                        <form class="d-flex" action="{{ route('admin.product.index') }}">
-                            <input class="form-control me-2" name="description" type="search"
-                                   placeholder="Найти по описанию"
-                                   aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Поиск</button>
-                        </form>
-                    </div>
-                    <div class="col-2">
-                        <form class="d-flex" action="{{ route('admin.product.index') }}">
-                            <input class="form-control me-2" name="function" type="search"
-                                   placeholder="Найти по назначению"
-                                   aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Поиск</button>
-                        </form>
-                    </div>
-                </div>
-            </div><!-- /.container-fluid -->
+
+            </div>
         </section>
         <!-- /.content -->
     </div>

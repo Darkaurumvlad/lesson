@@ -33,6 +33,20 @@
                 <div class="row">
                     <div class="col-9">
                         <div class="card">
+                            <form>
+                                <input type="checkbox" name="sort" value="name_up" id="sort1">
+                                <label for="sort1">сортировать по имени по
+                                    алфавиту</label><br>
+                                <input type="checkbox" name="sort" value="name_down" id="sort2">
+                                <label for="sort2">сортировать по имени с конца алфавита</label><br>
+                                <input type="checkbox" name="sort" value="delivery_cost_up" id="sort3">
+                                <label for="sort3">сортировать по стоимости поставки по
+                                    возрастанию</label><br>
+                                <input type="checkbox" name="sort" value="delivery_cost_down" id="sort4">
+                                <label for="sort4">сортировать по
+                                    стоимости поставки по убыванию</label><br>
+                                <button class="btn btn-outline-success" type="submit">Сортировать</button>
+                            </form>
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
@@ -80,41 +94,21 @@
                             </div>
                             <div class="row col-12">
                                 <form>
-                                        <input type="checkbox" name="sort" value="name_up" id="sort1">
-                                        <label for="sort1">сортировать по имени по
-                                            алфавиту</label><br>
-                                        <input type="checkbox" name="sort" value="name_down" id="sort2">
-                                        <label for="sort2">сортировать по имени с конца алфавита</label><br>
-                                        <input type="checkbox" name="sort" value="delivery_cost_up" id="sort3">
-                                        <label for="sort3">сортировать по стоимости поставки по
-                                            возрастанию</label><br>
-                                        <input type="checkbox" name="sort" value="delivery_cost_down" id="sort4">
-                                        <label for="sort4">сортировать по
-                                            стоимости поставки по убыванию</label><br>
-                                    <button class="btn btn-outline-success" type="submit">Сортировать</button>
-                                </form>
-                                <form action="{{ route('admin.client.index') }}">
-                                    <div class="row col-10">
-                                        <input class="form-control me-2" name="name" type="search"
-                                               placeholder="Найти по имени"
-                                               aria-label="Search">
-                                        <input class="form-control me-2" name="region" type="search"
-                                               placeholder="Найти по региону" aria-label="Search">
-                                        <input class="form-control me-2" name="agreement_date" type="search"
-                                               placeholder="Найти по дате регистрации" aria-label="Search">
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <input type="text" name="delivery_cost[]" class="form-control"
-                                                   placeholder="минимальная цена">
-                                        </div>
-                                        <div class="col-4">
-                                            <input type="text" name="delivery_cost[]" class="form-control"
-                                                   placeholder="максимальная цена">
-                                        </div>
-                                    </div>
+                                    <input type="text" name="region" placeholder="Найти по региону">
+                                    <input type="text" name="agreement_date" placeholder="Найти по дате регистрации">
+                                    <input type="text" name="name" placeholder="Найти по имени">
+                                    <input type="text" name="delivery_cost[]" class="form-control"
+                                           placeholder="минимальная цена">
+                                    <input type="text" name="delivery_cost[]" class="form-control"
+                                           placeholder="максимальная цена">
                                     <button class="btn btn-outline-success" type="submit">Поиск</button>
                                 </form>
+                                {{--                                <form>--}}
+                                {{--                                <input type="text" name="delivery_cost[]" class="form-control"--}}
+                                {{--                                       placeholder="минимальная цена">--}}
+                                {{--                                <input type="text" name="delivery_cost[]" class="form-control"--}}
+                                {{--                                       placeholder="максимальная цена">--}}
+                                {{--                                </form>--}}
                             </div>
                             <!-- /.card-body -->
                         </div>

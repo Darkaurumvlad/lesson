@@ -40,17 +40,26 @@ class ProductFilter extends AbstractFilter
 
     public function normAzot(Builder $builder, $value)
     {
-        $builder->whereBetween('norm_azot', $value);
+
+        $from = isset($value[0]) ? $value[0] : 0;
+        $to = isset($value[1]) ? $value[1] : 99999999;
+        $builder->whereBetween('norm_azot', [$from, $to]);
     }
 
     public function normFosfor(Builder $builder, $value)
     {
-        $builder->whereBetween('norm_fosfor', $value);
+        $from = isset($value[0]) ? $value[0] : 0;
+        $to = isset($value[1]) ? $value[1] : 99999999;
+
+        $builder->whereBetween('norm_fosfor', [$from, $to]);
     }
 
     public function normKaliy(Builder $builder, $value)
     {
-        $builder->whereBetween('norm_kaliy', $value);
+        $from = isset($value[0]) ? $value[0] : 0;
+        $to = isset($value[1]) ? $value[1] : 99999999;
+
+        $builder->whereBetween('norm_kaliy', [$from, $to]);
     }
 
     public function cultureId(Builder $builder, $value)
@@ -66,7 +75,9 @@ class ProductFilter extends AbstractFilter
 
     public function price(Builder $builder, $value)
     {
-        $builder->whereBetween('price', $value);
+        $from = isset($value[0]) ? $value[0] : 0;
+        $to = isset($value[1]) ? $value[1] : 99999999;
+        $builder->whereBetween('price', [$from, $to]);
     }
 
     public function description(Builder $builder, $value)

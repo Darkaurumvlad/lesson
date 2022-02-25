@@ -10,14 +10,17 @@ use App\Models\Client;
 class IndexController extends Controller
 {
     public function __invoke(FilterRequest $request)
+//    public function __invoke()
     {
         $data = $request->validated();
-        dd($data);
+//        dd($data);
         $pole = 'name';
         $sort = 'ASC';
-        if (isset($data['name']) !== false || isset($data['delivery_cost']) !== false || isset($data['region']) !== false
-            || isset($data['agreement_date']) !== false) {
+        if ((isset($data['name']) !== false) || (isset($data['delivery_cost']) !== false) || (isset($data['region']) !== false)
+            || (isset($data['agreement_date']) !== false)) {
+
             $filter = app()->make(ClientFilter::class, ['queryParams' => array_filter($data)]);
+//            dd($filter);
             $clients = Client::filter($filter)->orderBy('agreement_date', 'DESC')->paginate(5);
             return view('admin.client.index', compact('clients'));
         }

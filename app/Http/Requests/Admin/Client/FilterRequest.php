@@ -24,10 +24,10 @@ class FilterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'string',
-            'delivery_cost' => '',
-            'region' => 'string',
-            'agreement_date' => 'string',
+            'name' => '',
+            'delivery_cost' => 'array:0,1|min:2',
+            'region' => '',
+            'agreement_date' => '',
             'sort' => '',
         ];
     }
