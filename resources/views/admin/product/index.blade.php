@@ -137,13 +137,13 @@
                                 <input type="text" name="price[]" class="form-control"
                                        placeholder="максимальная цена">
                                 <div class="container col-12">
-                                    <input  name="name" type="search"
+                                    <input  name="name" type="text"
                                            placeholder="Найти по названию">
-                                    <input  name="district" type="search"
+                                    <input  name="district" type="text"
                                            placeholder="Найти по району">
-                                    <input name="description" type="search"
+                                    <input name="description" type="text"
                                            placeholder="Найти по описанию">
-                                    <input name="function" type="search"
+                                    <input name="function" type="text"
                                            placeholder="Найти по назначению">
                                     <div class="form-group">
                                         <label>Культуры</label>
